@@ -1,6 +1,6 @@
-=== Application Insights Dashboard ===
+=== Application Insights Dashboard Beta ===
 Contributors: Sachin Jain 
-Tags: Application Insights, Microsoft Azure, Appinsights
+Tags: Application Insights, Microsoft Azure, Appinsights, 
 Requires at least: 4.0
 Tested up to: 4.2.2
 Stable tag: 2.0a

@@ -1,0 +1,58 @@
+table.options{
+	padding-left:10px;
+	width:100%;
+}
+
+.options td{
+	padding:0px 5px 5px 5px;
+}
+
+td.title, td.info{
+	width:130px;
+	padding-left:20px;
+}
+
+td.title-select{
+	width:300px;	
+}
+
+td.info{
+	padding-bottom:15px;
+}
+
+td.title label{
+	font-weight:bold;
+}
+
+.appinsights-spinner {
+	margin: 5px 100px 2px;
+}
+
+#appinsights_query {
+	width: auto;
+}
+
+#appinsights_period {
+	width: 130px;
+}
+.appinsights-loader {
+    margin-left: 50%;
+    margin-top: 10%;
+}
+.extrastatsdata {
+    float: left; 
+    margin-left: 10px;
+    width:45%;
+    border:1px solid #ccc; 
+    margin-bottom: 5px; 
+    margin-right: 5px; 
+    }
+.extra_cen {
+    text-align: center; 
+}
+.extrastatsdata span {
+    margin-left: 10px;
+}
+.statsdata th {
+    text-align: left;
+}

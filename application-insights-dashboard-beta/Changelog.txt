@@ -1,0 +1,7 @@
+1.0a
+
+    Alpha release of Application Insights Dashboard.
+
+
+2.0a
+    Beta release of Application Insights Dashboard.

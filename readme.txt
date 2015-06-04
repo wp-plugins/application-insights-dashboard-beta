@@ -1,4 +1,4 @@
-=== Application Insights Dashboard Beta ===
+=== Application Insights Dashboard Plugin ===
 Contributors: Sachin Jain 
 Tags: Application Insights, Microsoft Azure, Appinsights, 
 Requires at least: 4.0

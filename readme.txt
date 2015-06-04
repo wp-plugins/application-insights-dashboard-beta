@@ -1,5 +1,5 @@
 === Application Insights Dashboard Plugin ===
-Contributors: Microsoft technologies 
+Contributors: vsacja, Microsoft technologies 
 Tags: Application Insights, Microsoft Azure, Appinsights, 
 Requires at least: 4.0
 Tested up to: 4.2.2

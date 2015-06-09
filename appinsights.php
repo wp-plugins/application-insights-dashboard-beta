@@ -132,7 +132,7 @@ function appinsights_admin_enqueue_styles($hook) {
 function appinsights_plugin_menu() {
 	add_options_page(
 	    'Microsoft Azure Application Insights Settings',
-	    'Application Insights',
+	    'Application Insights Dashboard',
 	    'manage_options',
 	    'appinsights',
 	    array('AppInsights_Settings', 'appinsights_plugin_options_page')

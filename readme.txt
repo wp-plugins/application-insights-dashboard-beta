@@ -47,7 +47,7 @@ c. Goto Setting and fine application insights and add the instrumentation key of
 
 = Configure the plugin =
 
-1. The plugin can be configured in Settings > Application Insights.
+1. The plugin can be configured in Settings > Application Insights Dashboard.
 
 2. Enter the Tenant ID and Client ID and click "Authorize Plugin" button. You can find these values under the CONFIGURE tab of your Azure Active Directory application in the Microsoft Azure portal.
 

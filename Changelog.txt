@@ -1,4 +1,0 @@
-2.0a
-    Beta release of Application Insights Dashboard.
-2.2a
-    Beta release of with Some more Application Insights Dashboard stats.

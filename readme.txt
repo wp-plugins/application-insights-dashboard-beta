@@ -3,9 +3,9 @@ Contributors: vsacja
 Tags: Application Insights, Microsoft Azure, Appinsights,Windows Azure,  
 Requires at least: 4.0
 Tested up to: 4.2.2
-Stable tag: 2.2a
+Stable tag: 2.0a
 License: GPL2
-Version: 2.2a
+Version: 2.0a
 
 Application Insights Dashboard gives you the ability to view your Application Insights data in your WordPress dashboard.
 
@@ -57,5 +57,3 @@ c. Goto Setting and fine application insights and add the instrumentation key of
 == Changelog ==
 = 2.0a = 
 	* Beta release of Application Insights Dashboard.
-= 2.2a =
-	* Beta release of with Some more Application Insights Dashboard stats.

@@ -5,6 +5,7 @@ Requires at least: 4.0
 Tested up to: 4.2.2
 Stable tag: 2.2a
 License: GPL2
+Version: 2.2a
 
 Application Insights Dashboard gives you the ability to view your Application Insights data in your WordPress dashboard.
 

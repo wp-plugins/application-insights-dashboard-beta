@@ -54,5 +54,7 @@ c. Goto Setting and fine application insights and add the instrumentation key of
 3. Login in using your Microsoft Azure credentials.
 
 == Changelog ==
-= 2.0a =
-* Beta release of Application Insights Dashboard.
+= 2.0a = 
+	* Beta release of Application Insights Dashboard.
+= 2.2a =
+	* Beta release of with Some more Application Insights Dashboard stats.

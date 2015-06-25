@@ -155,22 +155,25 @@ if ($extra_statsdata) {
 
     if( $extra_statsdata == 1 ) { /* for users */
         $metric         = "context.user.anonId.hash"; 
-        $extra_title    = "Users"; 
-        $name           = array( "Country or Region","City" );
-        $data           = array(array( "filter_experession" => "Key eq 'F' or Key eq null", "metrics" => "context.location.country", "key" => "context.data.isSynthetic" ),
-                                array( "filter_experession" => "Key eq 'F'", "metrics" => "context.location.city", "key" => "context.data.isSynthetic" ), 
-                          );
-
+        $extra_title    = "Users";         
     } elseif( $extra_statsdata == 2) {    /* for Sessions */     
         $metric         = "context.session.id.hash";
         $extra_title    = "Sessions";
-        $name           = array( "Operting Systems","State or Province", "Browser" );
-        $data           = array( 
-                            array( "filter_experession" => "Key eq 'F'", "metrics" => "context.device.osVersion", "key" => "context.data.isSynthetic" ), 
-                            array( "filter_experession" => "Key eq 'F'", "metrics" => "context.location.province", "key" => "context.data.isSynthetic" ),
-                            array( "filter_experession" => "Key eq 'F'", "metrics" => "context.device.browser", "key" => "context.data.isSynthetic" ) 
-                          );
     }
+
+    $name           = array( 'Continent', "Country or Region",'State or Province', "City", "Browser", "Operting Systems", "Entry Page" , "Exit Page" , 'Page Bounce');
+    $data           = array(
+                                array( "filter_experession" => "Key eq 'F'", "metrics" => "context.location.continent", "key" => "context.data.isSynthetic" ),
+                                array( "filter_experession" => "Key eq 'F' or Key eq null", "metrics" => "context.location.country", "key" => "context.data.isSynthetic" ),
+                                array( "filter_experession" => "Key eq 'F'", "metrics" => "context.location.province", "key" => "context.data.isSynthetic" ),
+                                array( "filter_experession" => "Key eq 'F'", "metrics" => "context.location.city", "key" => "context.data.isSynthetic" ),
+                                array( "filter_experession" => "Key eq 'F'", "metrics" => "context.device.browser", "key" => "context.data.isSynthetic" ),
+                                array( "filter_experession" => "Key eq 'F'", "metrics" => "context.device.osVersion", "key" => "context.data.isSynthetic" ),                                
+                                array( "filter_experession" => "Key eq 'F'", "metrics" => "sessionMetric.exitUrl", "key" => "context.data.isSynthetic" ),
+                                array( "filter_experession" => "Key eq 'F'", "metrics" => "sessionMetric.entryUrl", "key" => "context.data.isSynthetic" ),
+                                array( "filter_experession" => "Key eq 'F'", "metrics" => "sessionMetric.pageBounceActivity", "key" => "context.data.isSynthetic" ) 
+                                
+                          );
     
     $metrics[] = array(
     	'Metric' => $metric,
@@ -181,7 +184,7 @@ if ($extra_statsdata) {
      
     echo '<br /><div id="geolocation_data"><span>*Unique count of '.$extra_title.' by </span><br clear="all" />'; 
 
-    for ( $i = 0; $i < count( $data ); $i++ ) {
+    for ( $i = 0, $j = 0; $i < count( $data ); $i++ ) {
         
         $appinsights_extra_statsdata = $AppInsights_API->appinsights_extra_stats( $component_id, $period, $from, $to,  $metrics, $data[$i]);
         
@@ -192,6 +195,8 @@ if ($extra_statsdata) {
                 echo "<tr><td width='60%'>".$key['key']."</td><td class='extra_cen'>".$key['value']."</td></tr>";
             }
             echo '</table></div>';
+            $j++; 
+            if($j % 2 == 0) echo '<br clear="all" />';
         }
         
     }

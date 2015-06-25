@@ -1,6 +1,6 @@
 === Application Insights Dashboard Plugin ===
-Contributors: vsacja, Microsoft technologies 
-Tags: Application Insights, Microsoft Azure, Appinsights, 
+Contributors: vsacja 
+Tags: Application Insights, Microsoft Azure, Appinsights,Windows Azure,  
 Requires at least: 4.0
 Tested up to: 4.2.2
 Stable tag: 2.0a
@@ -30,6 +30,20 @@ For these steps, you must have an Azure subscription with access to the Azure Ac
 
 3. Enter a value for Redirect URI with the format http://<your blog url>/wp-admin/options-general.php
 e.g. http://localhost/wordpress/wp-admin/options-general.php
+
+== Appinsights merging with Website
+
+1. Download another plugin "https://wordpress.org/plugins/application-insights/" 
+ 
+2.Install This Plugin =
+
+a. Extract the Application Insights plugin to the plugins directory of the WordPress installation. 
+e.g. if WordPress is installed in "C:\inetpub\wwwroot\wordpress" directory, extract the zip file into directory "C:\inetpub\wwwroot\wordpress\wp-content\plugins".
+
+b. To activate the plugin, log in into the WordPress as administrator and navigate to list of plugins. Then check the associated checkbox for the plugin and click on "Activate" link.and Configure install it and then activate the plugin 
+
+c. Goto Setting and fine application insights and add the instrumentation key of the components for which you want statistics.  
+
 
 = Configure the plugin =
 

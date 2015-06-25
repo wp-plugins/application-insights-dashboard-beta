@@ -215,7 +215,7 @@ class AppInsights_API {
     
     public function appinsights_main_charts($component_id, $period, $from, $to, $query) {
     	global $AppInsights_Config;
-    	
+
     	$metrics = array();
         $round = 0;
     	if ($query == "context.session.id.hash" || $query == "context.user.anonId.hash" ) {
@@ -310,6 +310,7 @@ class AppInsights_API {
     	try {
     		$serial = 'insights_qr3' . md5( str_replace ( array ('.', ',', '-'), "", $component_id . $period ) );
     		$transient = get_site_transient($serial);
+
     		if (empty ( $transient )) {
     			$data = $this->_get_appinsights_data(
     					    $component_id, 
@@ -349,10 +350,6 @@ class AppInsights_API {
     	$grain = '1d';
     	
     	try {
-    		$serial = 'insights_qr4' . md5( str_replace ( array ('.', ',', '-'), "", $component_id . $period . $opt_array['metrics'] ) );
-
-    		$transient = get_site_transient($serial);
-    		if (empty ( $transient )) {
     			$data = $this->_get_appinsights_data(
     					    $component_id, 
     					    $from, 
@@ -360,12 +357,6 @@ class AppInsights_API {
     					    $metrics, 
     					    array('grain' => $grain, "filter_expression" => $opt_array["filter_expression"], "key" =>$opt_array['key'], 'metrics' => $opt_array["metrics"] )
     		    );
-                
-    			set_site_transient ( $serial, $data, $this->get_timeouts ( $timeouts ) );
-    		} else {
-				$data = $transient;
-			}
-    		
     	} catch ( Exception $e ) {
     		return 0;
     	}
@@ -373,7 +364,11 @@ class AppInsights_API {
 
         if (isset ( $data)) {
             foreach ( $data  as $key ) {
-             $extra_stats[] = array("key"=> $key['key'] , "value" => $key[$metrics[0]['Metric'] . "." . $metrics[0]['ApplyFunction']]['value']);  
+                if($key['key'] != 2) {
+                    $extra_stats[] = array("key"=> $key['key'] , "value" => $key[$metrics[0]['Metric'] . "." . $metrics[0]['ApplyFunction']]['value']);  
+                } else {
+                    $extra_stats[] = array("key"=> "Multiple Pages" , "value" => $key[$metrics[0]['Metric'] . "." . $metrics[0]['ApplyFunction']]['value']);  
+                }
             }
     	}
     	return $extra_stats;
